@@ -16,24 +16,34 @@
 
         <ion-item>
             <ion-label>Difficulty</ion-label>
-            <ion-select value="easy">
+            <ion-select value="easy" (ionChange)="difficultyChange($event)">
                 <ion-select-option value="easy">Easy (1-10)</ion-select-option>
                 <ion-select-option value="medium">Medium (1-100)</ion-select-option>
                 <ion-select-option value="hard">Hard (1-1000)</ion-select-option>
                 <ion-select-option value="master">Master (1-10000)</ion-select-option>
             </ion-select>
         </ion-item>
-
     </ion-list>
-  
-
-
+    <ion-card>
+        <ion-text>
+            <h1>90000</h1>
+        </ion-text>
+    </ion-card>
+    <ion-card>
+        <ion-text>
+            <h1>+</h1>
+        </ion-text>
+    </ion-card>
+    <ion-card>
+        <ion-text>
+            <h1>80000</h1>
+        </ion-text>
+    </ion-card>
 </ion-content>
 <ion-footer>
     <ion-card>
         <ion-button size="large" color="primary" expand="block">4</ion-button>
         <ion-button size="large" color="tertiary" expand="block">7</ion-button>
         <ion-button size="large" color="dark" expand="block">8</ion-button>
-
     </ion-card>
 </ion-footer>
