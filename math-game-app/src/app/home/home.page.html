@@ -12,8 +12,9 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
 
+
+    <ion-list class="contenty">
         <ion-item>
             <ion-label>Difficulty</ion-label>
             <ion-select value="easy" (ionChange)="difficultyChange($event)">
@@ -24,26 +25,41 @@
             </ion-select>
         </ion-item>
     </ion-list>
-    <ion-card>
-        <ion-text>
-            <h1>{{equationNumberOne}}</h1>
+
+
+    <ion-card class="equation">
+        <ion-text class="texty">
+            {{equationNumberOne}}
         </ion-text>
     </ion-card>
-    <ion-card>
-        <ion-text>
-            <h1>+</h1>
+    <ion-card class="equation">
+
+        <ion-text class="texty">
+            {{placeHolderText}}
         </ion-text>
     </ion-card>
-    <ion-card>
-        <ion-text>
-            <h1>{{equationNumberTwo}}</h1>
+
+    <ion-card class="equation">
+        <ion-text class="texty">
+
+            {{equationNumberTwo}}
         </ion-text>
     </ion-card>
+
 </ion-content>
-<ion-footer>
+<ion-footer class="card">
     <ion-card>
-        <ion-button size="large" color="primary" expand="block">{{answerOne}}</ion-button>
-        <ion-button size="large" color="tertiary" expand="block">{{answerTwo}}</ion-button>
-        <ion-button size="large" color="dark" expand="block">{{answerThree}}</ion-button>
+        <ion-button size="large" [disabled]="buttonDisable" color={{buttonOneColor}}
+                    (click)="answered({value: answerOne, block: 'one'})"
+                    expand="block">{{answerOne}}
+        </ion-button>
+        <ion-button size="large" [disabled]="buttonDisable" color={{buttonTwoColor}}
+                    (click)="answered({value: answerTwo, block: 'two'})"
+                    expand="block">{{answerTwo}}
+        </ion-button>
+        <ion-button size="large" [disabled]="buttonDisable" color={{buttonThreeColor}}
+                    (click)="answered({value: answerThree, block: 'three'})"
+                    expand="block">{{answerThree}}
+        </ion-button>
     </ion-card>
 </ion-footer>

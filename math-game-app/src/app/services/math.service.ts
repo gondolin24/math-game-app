@@ -21,18 +21,28 @@ export class MathService {
         finalEquation.numberOne = this.getRandomInt(max);
         finalEquation.numberTwo = this.getRandomInt(max);
         finalEquation.answer = finalEquation.numberTwo + finalEquation.numberOne;
-        finalEquation.badAnswerOne = this.getBadAnswer(max);
-        finalEquation.badAnswerTwo = this.getBadAnswer(max);
+        finalEquation.badAnswerOne = this.getBadAnswer(max, finalEquation.answer);
+        finalEquation.badAnswerTwo = this.getBadAnswer(max, finalEquation.answer);
+        while (finalEquation.badAnswerOne === finalEquation.badAnswerTwo) {
+            finalEquation.badAnswerTwo = this.getBadAnswer(max, finalEquation.answer);
+        }
+
+
         return finalEquation;
     }
 
 
-    private getBadAnswer(max: number): number {
-        const spread = Math.floor(max * .1);
+    private getBadAnswer(max: number, answer: number): number {
+        let spread = 0;
+
+        while (spread == 0) {
+            spread = this.getRandomInt(Math.floor(max * 0.2));
+        }
+
         if (this.getRandomInt(10) > 5) {
-            return this.getRandomInt(max - spread)
+            return answer - spread
         } else {
-            return this.getRandomInt(max + spread)
+            return answer + spread
         }
 
     }
@@ -49,7 +59,7 @@ export class MathService {
         }
     }
 
-    private getRandomInt(max): number {
+    public getRandomInt(max): number {
         return Math.floor(Math.random() * Math.floor(max));
     }
 
