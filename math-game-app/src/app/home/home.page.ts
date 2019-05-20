@@ -94,7 +94,7 @@ export class HomePage {
         }
     }
 
-    protected answered(event: any) {
+    answered(event: any) {
         if (event.value === this.currentAnswer) {
             //correct
             this.placeHolderText = "Correct";
