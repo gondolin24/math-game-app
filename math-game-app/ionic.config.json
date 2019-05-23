@@ -1,7 +1,5 @@
 {
   "name": "math-game-app",
-  "integrations": {
-    "cordova": {}
-  },
+  "integrations": {},
   "type": "angular"
 }
