@@ -4,24 +4,54 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      List
+      About me
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
-        {{item.note}}
-      </div>
+    <ion-item >
+      <ion-icon name="cafe" slot="start"  color="primary"></ion-icon>
+      I really enjoy a nice cup of coffee.
+    </ion-item>
+
+    <ion-item >
+      <ion-icon name="airplane" slot="start" color="danger"></ion-icon>
+      I don't travel.
+    </ion-item>
+
+    <ion-item >
+      <ion-icon name="save" slot="start" color="secondary-tint"></ion-icon>
+      Always save your work.
+    </ion-item>
+
+    <ion-item >
+      <ion-icon name="pin" slot="start" color="secondary-tint"></ion-icon>
+      Reside in Toronto
     </ion-item>
   </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+
+  <ion-card>
+    <ion-text>
+      <p>
+      Future updates:
+      </p>
+
+    </ion-text>
+    <ion-list>
+      <ion-item >
+       To add multiplication, division and subtraction
+      </ion-item>
+
+      <ion-item >
+        Add a Donate us a coffee button.
+      </ion-item>
+    </ion-list>
+
+
+
+
+  </ion-card>
+
 </ion-content>
